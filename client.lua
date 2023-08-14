@@ -16,9 +16,9 @@ RegisterCommand('car', function(source, args, rawCommand)
             local vehiclePlate = 'AZUKIOV'
             SetVehicleNumberPlateText(vehicle, vehiclePlate)
             TaskWarpPedIntoVehicle(GetPlayerPed(-1), vehicle, -1)
-            TriggerClientEvent('chatMessage', source, '^2Succès^7', {0, 255, 0}, 'Vous avez fait spawn une ' .. carName .. ' avec la plaque d\'immatriculation ' .. vehiclePlate)
+            print('Spawned ' .. carName .. ' with plate ' .. vehiclePlate .. '.')
         else
-            TriggerClientEvent('chatMessage', source, '^1Erreur^7', {255, 0, 0}, 'Nom de voiture invalide. Utilisation : /car [car_name]')
+            print('Invalid vehicle name.')
         end
     end
 end, false)
