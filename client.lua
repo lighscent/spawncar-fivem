@@ -22,3 +22,16 @@ RegisterCommand('car', function(source, args, rawCommand)
         end
     end
 end, false)
+
+RegisterCommand('dv', function(source, args, rawCommand)
+    local playerPed = GetPlayerPed(-1)
+    local currentVehicle = GetVehiclePedIsIn(playerPed, false)
+    if DoesEntityExist(currentVehicle) then
+        Citizen.InvokeNative(0xAE3CBE5BF394C9C9, Citizen.PointerValueIntInitialized(currentVehicle))
+        SetEntityAsNoLongerNeeded(Citizen.PointerValueIntInitialized(currentVehicle))
+        DeleteVehicle(currentVehicle)
+        print('Vehicle deleted.')
+    else
+        print('You are not in a vehicle.')
+    end
+end, false)
