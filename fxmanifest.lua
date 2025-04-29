@@ -1,11 +1,9 @@
 fx_version 'cerulean'
-games {'gta5'}
+game 'gta5'
 
-author 'Dev by Azukiov'
-description 'SpawnCar'
+author 'lighscent'
+description 'A simple script to spawn a car in FiveM'
 version '1.0'
 
 
-client_scripts {
-	"client.lua",
-}
+client_script 'client.lua'
